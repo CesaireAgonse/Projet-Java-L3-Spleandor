@@ -1,0 +1,10 @@
+Catherine-de'-Medici : 0 : 3 : 3 : 3 : 0
+Elizabeth-Of-Australia : 0 : 3 : 0 : 0 : 3
+Isabellla-I-Of-Castile : 4 : 0 : 0 : 0 : 4
+Niccolo-Machiavelli : 4 : 4 : 0 : 0 : 0
+Suleiman-The-Magnificent : 0 : 4 : 4 : 0 : 0
+Anne-Of-Brittany : 3 : 3 : 3 : 0 : 0
+Charles-V : 3 : 0 : 0 : 3 : 3
+Francis-I-Of-France : 0 : 0 : 3 : 3 : 3
+Henry-VII : 0 : 0 : 0 : 4 : 4
+Mary-Stuart : 0 : 0 : 4 : 4 : 0

@@ -1,0 +1,78 @@
+<project name="Splendor" default="main" basedir=".">
+	<description>
+			Create a Java Project (JAR) with Ant build script
+	</description>
+
+	<property name="Splendor" value="DateUtils"/>
+
+	<!-- Java sources -->
+	<property name="src.dir" location="src"/>
+
+	<!-- Java classes -->
+	<property name="classes.dir" location="classes"/>
+	
+	<!-- Javadoc -->
+	<property name="doc.dir" location="docs/doc"/>
+	
+	<!-- Java Library -->
+	<property name="lib.dir" location="lib"/>
+
+	<target name="init">
+			<!-- Create the time stamp -->
+			<tstamp/>
+			<!-- Create the classes directory structure used by compile -->
+			<mkdir dir="${classes.dir}"/>
+	</target>
+	
+	<!-- ============================== -->
+	<!--      Compile the sources       -->
+	<!-- ============================== -->
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src.dir} into ${classes.dir} -->
+		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${classes.dir}">
+			<classpath>
+				<pathelement location = "lib/zen5.jar"/>
+			</classpath>
+		</javac>
+	</target>
+	
+	
+	<!-- ============================== -->
+	<!--    Create the jar executive    -->
+	<!-- ============================== -->
+	<target name="jar">
+		<jar jarfile = "Splendor.jar" basedir="${classes.dir}">
+			<zipgroupfileset dir = "${lib.dir}" includes ="zen5.jar"/>
+		    <manifest>
+		        <attribute name="Main-Class" value="fr.umlv.splendor.main.Main" />
+		    </manifest>
+		</jar>
+	</target>
+	
+
+	<!-- ============================== -->
+	<!-- Generate Javadoc documentation -->
+	<!-- ============================== -->
+	<target name="javadoc">
+		<javadoc sourcepath="${src.dir}" destdir="${doc.dir}" >
+			<classpath>
+				<pathelement location = "lib/zen5.jar"/>
+			</classpath>
+		</javadoc>
+	</target> 
+	
+	
+	<!-- ============================== -->
+	<!-- Clean the project              -->
+	<!-- ============================== -->
+
+	<target name="clean" description="clean up">
+			<delete dir="${classes.dir}"/>
+			<delete dir="${doc.dir}"/>
+	</target>
+
+	<!-- Default, run this -->
+	<target name="main" depends="clean, compile, javadoc, jar"/>
+
+</project>
