@@ -1,1 +1,1 @@
-# Projet-Java-Spleandor
+# Projet-L3-Java-Splendor
